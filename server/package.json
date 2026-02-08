@@ -1,0 +1,36 @@
+{
+  "name": "nyaymitra-server",
+  "version": "1.0.0",
+  "description": "Backend for NyayMitra - Legal Document Assistant for Indian Lawyers",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest --coverage",
+    "migrate": "node src/config/migrate.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "morgan": "^1.10.0",
+    "dotenv": "^16.3.1",
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.11.3",
+    "openai": "^4.20.0",
+    "tesseract.js": "^5.0.3",
+    "docx": "^8.2.3",
+    "pdfkit": "^0.13.0",
+    "pdf-parse": "^1.1.1",
+    "express-rate-limit": "^7.1.4",
+    "uuid": "^9.0.0",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3"
+  }
+}
