@@ -1,6 +1,14 @@
 require('dotenv').config();
-const { pool } = require('./database');
+const { Pool } = require('pg');
 const logger = require('../utils/logger');
+
+const migrationUrl = process.env.DIRECT_URL || process.env.DATABASE_URL;
+const isLocalDb = migrationUrl.includes('localhost') || migrationUrl.includes('127.0.0.1');
+
+const pool = new Pool({
+  connectionString: migrationUrl,
+  ssl: isLocalDb ? false : { rejectUnauthorized: false },
+});
 
 const migration = `
   CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
